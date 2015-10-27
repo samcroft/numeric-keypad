@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Num Pad</title>
+
+	<style>
+		.num-pad {
+			display: none;
+		}
+
+		.num-pad--show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="num-pad" class="num-pad">
+		<li><a href="#" data-key="0">0</a></li>
+		<li><a href="#" data-key="1">1</a></li>
+		<li><a href="#" data-key="2">2</a></li>
+		<li><a href="#" data-key="3">3</a></li>
+		<li><a href="#" data-key="4">4</a></li>
+		<li><a href="#" data-key="5">5</a></li>
+		<li><a href="#" data-key="6">6</a></li>
+		<li><a href="#" data-key="7">7</a></li>
+		<li><a href="#" data-key="8">8</a></li>
+		<li><a href="#" data-key="9">9</a></li>
+		<li><a href="#" data-key=".">.</a></li>
+		<li><a href="#" data-key="delete">Del</a></li>
+	</ul>
+
+	<input id="input" type="number" data-num-pad="num-pad">
+
+	<script src="app.js"></script>
+
+	<script>
+		numPad.init('input');
+	</script>
+</body>
+</html>
