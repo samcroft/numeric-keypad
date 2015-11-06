@@ -1,5 +1,5 @@
 .numeric-keypad,
-.numeric-keypad__keys,
+.numeric-keypad__key,
 .numeric-keypad__button {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -26,19 +26,19 @@
 		display: block;
 		float: left;
 		text-align: center;
-		width: 47.33px;
+		width: 49.33px;
 	}
 		.numeric-keypad__key--double {
-			width: 96.66px;
+			width: 98.66px;
 		}
 
 	.numeric-keypad__button {
 		border: none;
 		color: #000;
 		display: block;
-		font-family: 'Helvetica Neue', Ariel, sans-serif;
-		height: 47.33px;
-		line-height: 47.33px;
+		font-family: 'Helvetica Neue', Arial, sans-serif;
+		height: 49.33px;
+		line-height: 49.33px;
 		padding: 0;
 		text-decoration: none;
 		width: 100%;
