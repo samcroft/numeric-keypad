@@ -4,14 +4,44 @@ var numPad = (function(){
 	var inputEl;
 	var numPadEl;
 
+	var keys = [7,8,9,4,5,6,1,2,3,0,'.','Del','Ok','Cancel'];
+
 	var initialValue;
 
-	function init(el) {
+	function init() {
 		self = this;
 
-		numPadEl = document.getElementById(el);
+		createKeyPad();
 
 		bindEvents();
+	}
+
+	function createKeyPad() {
+		numPadEl = document.createElement('ul');
+		numPadEl.setAttribute('id', 'numeric-keypad');
+		numPadEl.className = 'numeric-keypad';
+
+		for (var i=0; i<keys.length;i++) {
+			var numPadKeyEl = document.createElement('li');
+			numPadKeyEl.className = 'numeric-keypad__key';
+
+			if (keys[i] == 'Ok') {
+				numPadKeyEl.classList.add('numeric-keypad__key--double');
+			}
+
+			var numPadButtonEl = document.createElement('button');
+			numPadButtonEl.setAttribute('data-key', keys[i]);
+			numPadButtonEl.className = 'numeric-keypad__button';
+
+			numPadButtonEl.innerHTML = keys[i];
+
+			numPadKeyEl.appendChild(numPadButtonEl);
+			numPadEl.appendChild(numPadKeyEl);
+		}
+
+		console.log(numPadEl);
+
+		document.body.appendChild(numPadEl);
 	}
 
 	function bindEvents() {
@@ -27,11 +57,11 @@ var numPad = (function(){
 			keys[i].addEventListener('click', keyPress, false);
 		}
 
-		var confirm = numPadEl.querySelectorAll('[data-control="ok"]');
+		var confirm = numPadEl.querySelectorAll('[data-key="Ok"]');
 
 		confirm[0].addEventListener('click', confirmValue, false);
 
-		var cancel = numPadEl.querySelectorAll('[data-control="cancel"]');
+		var cancel = numPadEl.querySelectorAll('[data-key="Cancel"]');
 
 		cancel[0].addEventListener('click', cancelValue, false);
 	}
@@ -43,11 +73,11 @@ var numPad = (function(){
 
 		numPadEl.style.top = (this.offsetTop + this.offsetHeight) + 'px';
 
-		numPadEl.classList.add('num-pad--show');
+		numPadEl.classList.add('numeric-keypad--show');
 	}
 
 	function hideNumPad() {
-		numPadEl.classList.remove('num-pad--show');
+		numPadEl.classList.remove('numeric-keypad--show');
 	}
 
 	function keyPress(e) {
@@ -66,7 +96,7 @@ var numPad = (function(){
 			key = '.';
 		}
 
-		if (key == 'delete') {
+		if (key == 'Del') {
 			if (inputEl.value.length) {
 				inputEl.value = inputEl.value.substr(0,inputEl.value.length-1);
 			}
@@ -86,7 +116,7 @@ var numPad = (function(){
 
 		hideNumPad();
 
-		self.confirmValueCallback(inputEl);
+		confirmValueCallback(inputEl);
 	}
 
 	function confirmValueCallback(el) {
@@ -100,7 +130,7 @@ var numPad = (function(){
 
 		inputEl.value = initialValue;
 
-		self.cancelValueCallback(inputEl);
+		cancelValueCallback(inputEl);
 	}
 
 	function cancelValueCallback(e) {
