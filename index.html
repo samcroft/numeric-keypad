@@ -4,38 +4,65 @@
 	<meta charset="UTF-8">
 	<title>JS Num Pad</title>
 
-	<style>
-		.num-pad {
-			display: none;
-		}
-
-		.num-pad--show {
-			display: block;
-		}
-	</style>
+	<link rel="stylesheet" href="css/numeric-keypad.css">
 </head>
 <body>
-	<ul id="num-pad" class="num-pad">
-		<li><a href="#" data-key="0">0</a></li>
-		<li><a href="#" data-key="1">1</a></li>
-		<li><a href="#" data-key="2">2</a></li>
-		<li><a href="#" data-key="3">3</a></li>
-		<li><a href="#" data-key="4">4</a></li>
-		<li><a href="#" data-key="5">5</a></li>
-		<li><a href="#" data-key="6">6</a></li>
-		<li><a href="#" data-key="7">7</a></li>
-		<li><a href="#" data-key="8">8</a></li>
-		<li><a href="#" data-key="9">9</a></li>
-		<li><a href="#" data-key=".">.</a></li>
-		<li><a href="#" data-key="delete">Del</a></li>
-	</ul>
+	<div id="num-pad" class="num-pad">
+		<ul class="num-pad__keys">
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="7">7</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="8">8</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="9">9</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="4">4</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="5">5</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="6">6</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="1">1</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="2">2</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="3">3</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="0">0</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="period">.</button>
+			</li>
+			<li class="num-pad__key">
+				<button class="num-pad__button" data-key="delete">Del</button>
+			</li>
+		</ul>
 
-	<input id="input" type="number" data-num-pad="num-pad">
+		<ul class="num-pad__controls">
+			<li class="num-pad__control num-pad__control--double">
+				<button class="num-pad__button" data-control="ok">Ok</button>
+			</li>
+			<li class="num-pad__control">
+				<button class="num-pad__button" data-control="cancel">Cancel</button>
+			</li>
+		</ul>
+	</div>
 
-	<script src="app.js"></script>
+	<input id="input" type="number" value="5.00" data-num-pad>
+
+	<script src="js/numeric-keypad.js"></script>
 
 	<script>
-		numPad.init('input');
+		numPad.init('num-pad');
 	</script>
 </body>
 </html>

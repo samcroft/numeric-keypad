@@ -1,0 +1,56 @@
+.num-pad,
+.num-pad__keys,
+.num-pad__key,
+.num-pad__controls,
+.num-pad__control,
+.num-pad__button {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.num-pad {
+	background: #F4F4F4;
+	border: 1px solid;
+	display: none;
+	position: absolute;
+	width: 100px;
+}
+
+.num-pad--show {
+	display: block;
+}
+
+.num-pad__keys,
+.num-pad__controls {
+	float: left;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100px;
+}
+
+	.num-pad__key,
+	.num-pad__control {
+		background: #CCC;
+		border: 1px solid;
+		display: block;
+		float: left;
+		text-align: center;
+		width: 32.66px;
+	}
+		.num-pad__key--double,
+		.num-pad__control--double {
+			width: 65.32px;
+		}
+
+	.num-pad__button {
+		border: none;
+		color: #000;
+		display: block;
+		font-family: 'Helvetica Neue', Ariel, sans-serif;
+		height: 33px;
+		line-height: 33px;
+		padding: 0;
+		text-decoration: none;
+		width: 100%;
+	}
