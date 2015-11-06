@@ -87,13 +87,11 @@ var numPad = (function(){
 
 		var currentInput = inputEl.value;
 
-		if (key == 'period') {
+		if (key == '.') {
 			if (currentInput.indexOf('.') !== -1) {
 
 				return;
 			}
-
-			key = '.';
 		}
 
 		if (key == 'Del') {
